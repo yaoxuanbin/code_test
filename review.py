@@ -13,7 +13,8 @@ def add_to_list(value, my_list):
 
 def format_greeting(name, age):
 
-    return "Hello, my name is {name} and I am {age} years old."
+    #need use f in order to use variable
+    return f"Hello, my name is {name} and I am {age} years old."
 
  
 
