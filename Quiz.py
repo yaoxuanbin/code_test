@@ -15,7 +15,11 @@ def reverse_list(l:list):
 
     """
 
-    return l[::-1]
+    n = len(l)
+    for i in range(n//2):
+        l[i], l[n-i-1] = l[n-i-1], l[i]
+        # print(i,l)
+    return l
 
 
  
