@@ -21,14 +21,12 @@ def format_greeting(name, age):
 
 class Counter:
 
-    count = 0
-
- 
-
     def __init__(self):
+        self.count = 0
+        
 
+    def increment(self):
         self.count += 1
-
  
 
     def get_count(self):
@@ -57,31 +55,31 @@ class SafeCounter:
 
  
 
-def worker(counter):
+    def worker(counter):
 
-    for _ in range(1000):
+        for _ in range(1000):
 
-        counter.increment()
+            counter.increment()
 
- 
+     
 
-counter = SafeCounter()
+    counter = SafeCounter()
 
-threads = []
+    threads = []
 
-for _ in range(10):
+    for _ in range(10):
 
-    t = threading.Thread(target=worker, args=(counter,))
+        t = threading.Thread(target=worker, args=(counter,))
 
-    t.start()
+        t.start()
 
-    threads.append(t)
+        threads.append(t)
 
- 
+     
 
-for t in threads:
+    for t in threads:
 
-    t.join()
+        t.join()
 
  
 
@@ -110,3 +108,12 @@ if __name__ == "__main__":
     my_list=add_to_list(2,my_list)
     my_list=add_to_list(3,my_list)
     print(my_list)
+    print('#format_greeting')
+    print(format_greeting('peter',20))
+    print('#counter')
+    counter=Counter()
+    counter.increment()
+    counter.increment()
+    print(counter.get_count())
+    
+    
