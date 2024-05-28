@@ -1,7 +1,6 @@
 # Review 1
 
-#my_list must not befault null
-def add_to_list(value, my_list):
+def add_to_list(value, my_list=[]):
 
     my_list.append(value)
 
@@ -108,6 +107,6 @@ def count_occurrences(lst):
 if __name__ == "__main__":
     print('#add_to_list')
     my_list=[1]
-    my_list=add_to_list(2)
-    my_list=add_to_list(3)
+    my_list=add_to_list(2,my_list)
+    my_list=add_to_list(3,my_list)
     print(my_list)
